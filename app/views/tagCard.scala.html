@@ -1,4 +1,4 @@
-@(user: securesocial.core.SocialUser, card: QSLCard)(implicit request: RequestHeader)
+@(user: securesocial.core.Identity, card: QSLCard)(implicit request: RequestHeader)
 @import securesocial.core.IdentityProvider
 
 @main("Tag a Random QSL Card", Some(user)) {

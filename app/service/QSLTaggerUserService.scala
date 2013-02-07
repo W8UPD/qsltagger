@@ -1,6 +1,6 @@
 package me.elrod.qsltagger
 
-import securesocial.core.{AuthenticationMethod, UserId, UserServicePlugin, SocialUser}
+import securesocial.core.{AuthenticationMethod, Identity, UserId, UserServicePlugin, SocialUser}
 import securesocial.core.providers.Token
 
 import anorm._
@@ -16,7 +16,7 @@ class QSLTaggerUserService(application: Application) extends UserServicePlugin(a
     * @param id the user id
     * @return an optional user
     */
-  def find(id: UserId): Option[SocialUser] = DB.withConnection { implicit c =>
+  def find(id: UserId): Option[Identity] = DB.withConnection { implicit c =>
     val users = SQL("SELECT * FROM users WHERE user_id = {user_id}").on(
       'user_id -> id.id
     )().map { row =>
@@ -39,7 +39,7 @@ class QSLTaggerUserService(application: Application) extends UserServicePlugin(a
   }
 
 
-  def findByEmailAndProvider(email: String, providerId: String): Option[SocialUser] = { None }
+  def findByEmailAndProvider(email: String, providerId: String): Option[Identity] = { None }
 
   /** Saves the user.
     *
@@ -48,7 +48,7 @@ class QSLTaggerUserService(application: Application) extends UserServicePlugin(a
     *
     * @param user
     */
-  def save(user: SocialUser) {
+  def save(user: Identity): Identity = {
     DB.withConnection { implicit c =>
       if (find(user.id) != None) {
         SQL(
@@ -99,6 +99,7 @@ class QSLTaggerUserService(application: Application) extends UserServicePlugin(a
             'profile_pic -> user.avatarUrl,
             'auth_method -> user.authMethod.method).executeUpdate()
       }
+      user
     }
   }
 

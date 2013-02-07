@@ -1,7 +1,8 @@
 # ---!Ups
 create table cards (
   id mediumint NOT NULL AUTO_INCREMENT,
-  tagger_user_id mediumint NOT NULL,
+  tagger_user_id mediumint,
+  approved boolean NOT NULL DEFAULT false,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
