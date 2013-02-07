@@ -1,0 +1,62 @@
+@(user: securesocial.core.SocialUser)(implicit request: RequestHeader)
+@import securesocial.core.IdentityProvider
+
+@main("Leaderboard - QSLTagger", Some(user)) {
+<h2 class="center">91/1234 cards have been tagged.</h2>
+<div class="lb-result clearfix">
+  <div class="left">
+    1.
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=998877" />
+  </div>
+  <div class="left padleft">
+    <a href="#">KG4SGP</a>
+    <p class="nomargin nopadding">
+      31 cards tagged.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+
+<div class="lb-result clearfix">
+  <div class="left">
+    2.
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=721930" />
+  </div>
+  <div class="left padleft">
+    <a href="#">KD8LCV</a>
+    <p class="nomargin nopadding">
+      24 cards tagged.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+
+<div class="lb-result clearfix">
+  <span class="right" style="font-size: 2em;"><i class="icon-chevron-left"></i></span>
+  <div class="left">
+    3.
+    <img src="@user.avatarUrl" />
+  </div>
+  <div class="left padleft">
+    <a href="#">N8SQL</a>
+    <p class="nomargin nopadding">
+      23 cards tagged.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+
+<div class="lb-result clearfix">
+  <div class="left">
+    4.
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=396894" />
+  </div>
+  <div class="left padleft">
+    <a href="#">KD8JKF</a>
+    <p class="nomargin nopadding">
+      13 cards tagged.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+}

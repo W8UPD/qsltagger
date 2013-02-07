@@ -1,0 +1,4 @@
+1500:com.typesafe.plugin.CommonsMailerPlugin
+9997:securesocial.controllers.DefaultTemplatesPlugin
+9998:me.elrod.qsltagger.QSLTaggerUserService
+10001:securesocial.core.providers.FacebookProvider

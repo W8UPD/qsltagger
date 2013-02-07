@@ -1,0 +1,84 @@
+@(title: String, user: Option[securesocial.core.SocialUser])(content: Html)
+@import me.elrod.qsltagger.helpers.Helpers._
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- Icon font credit: Font Awesome - http://fortawesome.github.com/Font-Awesome -->
+    <title>@title</title>
+    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Roboto|Exo|Maven+Pro">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome-ie7.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/main.js")" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="header" class="clearfix shadow">
+      <div class="constraint">
+        <div class="left">
+          <h1 class="nomargin textshadow"><a href="/" class="nodecoration"><i class="icon-tags"></i> QSLTagger</a></h1>
+        </div>
+        @user match {
+          case Some(user) => {
+            <div class="right">
+              <a id="usermenu_link" href="#">
+                <img class="nomargin nopadding" src="@user.avatarUrl" /><i class="icon-caret-down"></i>
+              </a>
+            </div>
+          }
+        }
+      </div>
+    </div>
+    @user match {
+      case Some(user) => {
+        <div class="constraint relative">
+          <div id="usermenu" class="right">
+            <h3 class="nomargin pad text-right">@user.fullName</h3>
+            <hr class="fadeline" />
+            <div class="menuitem">
+              <p class="nomargin nopadding center">
+                You're currently in <strong>3@numberSuffix(3)</strong> place.
+              </p>
+              <div class="clearfix">
+                <span class="left">Total tagged cards:</span>
+                <span class="right"><strong>1,234</strong></span>
+              </div>
+              <div class="clearfix">
+                <span class="left">Total you've tagged:</span>
+                <span class="right"><strong>67</strong></span>
+              </div>
+              <div class="clearfix">
+                <span class="left">Total remaining:</span>
+                <span class="right"><strong>9,001</strong></span>
+              </div>
+            </div>
+            <hr class="fadeline" />
+            <a href="@routes.Application.search" class="nodecoration">
+              <div class="menuitem">
+                <i class="icon-search"></i> Search
+              </div>
+            </a>
+            <a href="@routes.Application.leaderboarddemo" class="nodecoration">
+              <div class="menuitem">
+                <i class="icon-list"></i> Leaderboard Demo
+              </div>
+            </a>
+            <a href="@securesocial.controllers.routes.LoginPage.logout" class="nodecoration">
+              <div class="menuitem">
+                <i class="icon-signout"></i> Logout
+              </div>
+            </a>
+          </div>
+        </div>
+      }
+      case None => {}
+    }
+    <div class="constraint padtop">
+      @content
+      <!--<a href="@routes.Application.tutorial">Tutorial</a>-->
+    </div>
+  </body>
+</html>

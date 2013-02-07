@@ -1,0 +1,40 @@
+@(user: securesocial.core.SocialUser)(implicit request: RequestHeader)
+@import securesocial.core.IdentityProvider
+
+@main("W8UPD QSLTagger", Some(user)) {
+<div class="clearfix">
+    <h2>Welcome to QSLTagger.</h2>
+
+    <p>
+      You've successfully authenticated and can begin tagging cards right away.
+      You can return to this page any time by clicking "tutorial" in the footer,
+      at the bottom of any page.
+    </p>
+    <p>
+      If you know what you're doing, feel free to go to <a href="/">the home
+      page</a> and begin your QSL card tagging adventure. Otherwise, read up
+      below. It's easy to get started.
+    </p>
+
+    <h2>How does tagging work?</h2>
+    <p>
+      When you are ready to begin tagging, you'll be presented with a random QSL
+      card. You'll be shown all sides of the card, and asked to type information
+      relating to it.
+    </p>
+    <p>
+      Some things you should tag are <i>callsign</i>, <i>location</i>, <i>time
+      and date</i> of the contact, <i>signal reports</i>, and any other
+      information that could help people <b>search</b>. The information that you
+      input will be used to create a searchable index, which will let people
+      easily query our database to find matching QSL cards, given a set of
+      searchable criteria.
+    </p>
+
+    <h2>So how do I do it?</h2>
+    <p>
+      Well, go to the home page. You'll be presented with a random QSL card, for
+      you to tag. You'll see a bunch of text fields, which are set up in
+      key-value pairs.
+</div>
+}

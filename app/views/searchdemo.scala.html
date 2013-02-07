@@ -1,0 +1,68 @@
+@(user: securesocial.core.SocialUser)(implicit request: RequestHeader)
+@import securesocial.core.IdentityProvider
+
+@main("\"July 17\" - QSLTagger Search", Some(user)) {
+<div class="clearfix padtop padbottom">
+  <div class="left">
+    <h2 class="electrolize nopadding nomargin">
+      <i class="icon-search"></i> Search results for: "July 17"
+    </h2>
+  </div>
+  <div class="right">
+    <input type="text" class="vert-center" placeholder="Search Query..." style="padding-right: 20px;" />
+    <button type="submit" class="virt-center" style="margin-left: -30px; background: none; border: none; cursor: pointer;"><i class="icon-search"></i></button>
+  </div>
+</div>
+
+<div class="search-result clearfix">
+  <div class="left">
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=998877" />
+  </div>
+  <div class="left padleft">
+    <a href="#">W1AW</a>
+    <p class="nomargin nopadding">
+      <i>Contacted:</i> July 17th, 1978. <i>RST Sent:</i> 599. <i>RST Received:</i> 599.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+
+<div class="search-result clearfix">
+  <div class="left">
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=721930" />
+  </div>
+  <div class="left padleft">
+    <a href="#">KG4SGP</a>
+    <p class="nomargin nopadding">
+      <i>Contacted:</i> July 17th, 2010. <i>RST Sent:</i> 599. <i>RST Received:</i> 599.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+
+<div class="search-result clearfix">
+  <div class="left">
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=639102" />
+  </div>
+  <div class="left padleft">
+    <a href="#">KD8LCV</a>
+    <p class="nomargin nopadding">
+      <i>Contacted:</i> July 17th, 2009. <i>RST Sent:</i> 599. <i>RST Received:</i> 599.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+
+<div class="search-result clearfix">
+  <div class="left">
+    <img src="http://da.gd/image/45x45.jpg?text=off&bgcolor=396894" />
+  </div>
+  <div class="left padleft">
+    <a href="#">KD8JKF</a>
+    <p class="nomargin nopadding">
+      <i>Contacted:</i> July 17th, 2007. <i>RST Sent:</i> 599. <i>RST Received:</i> 599.
+    </p>
+  </div>
+</div>
+<hr class="fadeline" />
+}
