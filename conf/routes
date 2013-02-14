@@ -8,6 +8,7 @@ GET     /tutorial                   controllers.Application.tutorial
 GET     /searchdemo                 controllers.Application.searchdemo
 GET     /search                     controllers.Application.search
 GET     /lbdemo                     controllers.Application.leaderboarddemo
+GET     /gallery                    controllers.Application.gallery
 
 GET     /login                      securesocial.controllers.LoginPage.login
 GET     /logout                     securesocial.controllers.LoginPage.logout

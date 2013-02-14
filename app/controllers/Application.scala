@@ -37,5 +37,10 @@ object Application extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.search(request.user))
   }
 
+  def gallery = UserAwareAction { implicit request =>
+    val cards = QSLCardSide.getAllDistinct()
+    Ok(views.html.gallery(request.user, cards))
+  }
+
 
 }

@@ -5,7 +5,7 @@
 <div class="clearfix padtop padbottom">
   <div id="qslcard" class="center">
     @card.sides.map { side =>
-      <img src="@routes.Assets.at("qslcards/" + side.filename)" class="card" />
+      <img src="@side.route" class="card" />
     }
   </div>
 </div>

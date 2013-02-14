@@ -4,6 +4,8 @@ $ ->
     $('#usermenu').toggle()
   $('html').click (event) =>
     $('#usermenu').hide()
+  $(window).blur =>
+    $('#usermenu').hide()
 
   selection = $('<div>').addClass('tagbox')
   container = $('#qslcard')
@@ -45,12 +47,9 @@ $ ->
           })
 
     container.mouseup (event) =>
-      move_x = event.pageX
-      move_y = event.pageY
-      width  = Math.abs(move_x - click_x)
-      height = Math.abs(move_y - click_y)
-
-
+      offset = $('#qslcard').offset()
+      move_x = event.pageX - offset.left
+      move_y = event.pageY - offset.top
 
       container.off('mousemove')
       container.off('mouseup')

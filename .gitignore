@@ -13,4 +13,4 @@ dist
 /.project
 /RUNNING_PID
 application.conf
-public/qslcards
+public/qslcards*
