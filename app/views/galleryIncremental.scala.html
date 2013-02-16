@@ -1,0 +1,7 @@
+@(sides: List[QSLCardSide])(implicit request: RequestHeader)
+@sides.grouped(4).map { row =>
+  @row.map { side =>
+    <img src="@side.thumbnailRoute" />
+  }
+  <br />
+}

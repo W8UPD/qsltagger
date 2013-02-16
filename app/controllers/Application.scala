@@ -38,9 +38,16 @@ object Application extends Controller with securesocial.core.SecureSocial {
   }
 
   def gallery = UserAwareAction { implicit request =>
-    val cards = QSLCardSide.getAllDistinct()
-    Ok(views.html.gallery(request.user, cards))
+    Ok(views.html.gallery(request.user))
   }
 
+  def galleryIncremental(start: Int = 0) = Action { implicit request =>
+    val sides = QSLCardSide.allSides.grouped(40).toList
+    if (start > sides.length - 1) {
+      Ok(views.html.galleryIncremental(List()))
+    } else {
+      Ok(views.html.galleryIncremental(sides(start)))
+    }
+  }
 
 }

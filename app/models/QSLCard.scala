@@ -59,7 +59,7 @@ object QSLCardSide {
     }
   }
 
-  def getAllDistinct() = DB.withConnection { implicit c =>
+  lazy val allSides = DB.withConnection { implicit c =>
     SQL("SELECT t1.* FROM card_sides t1 JOIN (SELECT MAX(id) AS id, card_id, filename FROM card_sides GROUP BY card_id) t2 ON t1.id = t2.id").as(QSLCardSide.simple *)
   }
 }

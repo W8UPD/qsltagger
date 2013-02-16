@@ -1,15 +1,12 @@
-@(user: Option[securesocial.core.Identity], cards: List[QSLCardSide])(implicit request: RequestHeader)
+@(user: Option[securesocial.core.Identity])(implicit request: RequestHeader)
 @import securesocial.core.IdentityProvider
 
 @main("QSL Card Gallery", user) {
-<script src="https://raw.github.com/tuupola/jquery_lazyload/master/jquery.lazyload.min.js"></script>
+<script src="@routes.Assets.at("javascripts/jquery.blockUI.js")"></script>
+<script src="@routes.Assets.at("javascripts/jquery-debounce.min.js")"></script>
+<script src="@routes.Assets.at("javascripts/gallery.min.js")"></script>
 <div class="clearfix padtop padbottom">
-  <div class="center">
-    @cards.grouped(4).map { row =>
-      @row.map { side =>
-        <img src="http://www.appelsiini.net/projects/lazyload/img/grey.gif" data-original="@side.thumbnailRoute" class="lazy" width="192" />
-      }
-      <br />
-    }
-      <script>$(function() { $("img.lazy").lazyload({ skip_invisible : false }); });</script>
+  <div id="images" class="center">
+  </div>
+</div>
 }
