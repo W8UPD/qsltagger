@@ -15,6 +15,6 @@ $ ->
   $(window).debounce(
     'scroll',
     (->
-      if $(window).scrollTop() + $(window).height() > $(document).height() - 100
+      if $(window).scrollTop() + $(window).height() > $(document).height() - 500
         loadIncremental(sideGroup)),
-    200)
+    100)
