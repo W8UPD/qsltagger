@@ -28,7 +28,7 @@ on the browser, locking the UI while it renders out the DOM tree. The point
 here is that we've designed the application to be as fast as possible, even
 when we have to show a lot of information. We also do our best to avoid slow
 queries, and having issues like the 
-**[http://www.phabricator.com/docs/phabricator/article/Performance_N+1_Query_Problem.html](N+1 problem)**.
+**[N+1 problem](http://www.phabricator.com/docs/phabricator/article/Performance_N+1_Query_Problem.html)**.
 
 We hope that our efforts pay off and that people will be able to easily
 navigate through our collection of cards and be sent down memory lane as they
