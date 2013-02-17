@@ -48,6 +48,12 @@ object QSLCard {
     SQL("SELECT * FROM cards LEFT JOIN card_sides ON cards.id = card_sides.card_id")
       .as(QSLCard.withSides *)
   }
+
+  def getFromID(id: Int) = DB.withConnection { implicit c =>
+    SQL("SELECT * FROM cards WHERE id={id}").on(
+      'id -> id
+    ).as(QSLCard.simple.single)
+  }
 }
 
 object QSLCardSide {

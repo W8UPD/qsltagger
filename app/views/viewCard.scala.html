@@ -1,7 +1,8 @@
-@(user: securesocial.core.Identity, card: QSLCard)(implicit request: RequestHeader)
+@(user: Option[securesocial.core.Identity], card: QSLCard)(implicit request: RequestHeader)
 @import securesocial.core.IdentityProvider
 
-@main("Tag a Random QSL Card", Some(user)) {
+@main("Viewing QSL Card #" + card.id, user) {
+<h1 class="center">QSL Card #@card.id</h1>
 <div class="clearfix padtop padbottom">
   <div id="qslcard" class="center">
     @card.sides.reverse.map { side =>

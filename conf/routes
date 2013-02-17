@@ -11,6 +11,8 @@ GET     /lbdemo                     controllers.Application.leaderboarddemo
 GET     /gallery                    controllers.Application.gallery
 GET     /gallery/incremental/:start controllers.Application.galleryIncremental(start: Int)
 
+GET     /card/:id                   controllers.Application.showCard(id: Int)
+
 GET     /login                      securesocial.controllers.LoginPage.login
 GET     /logout                     securesocial.controllers.LoginPage.logout
 GET     /signup                     securesocial.controllers.Registration.startSignUp
