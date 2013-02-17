@@ -34,11 +34,6 @@ object QSLCard {
     SQL("SELECT * FROM cards ORDER BY RAND() LIMIT 1").as(QSLCard.simple.single)
   }
 
-  def getAll() = DB.withConnection { implicit c =>
-    SQL("SELECT * FROM cards LEFT JOIN card_sides ON cards.id = card_sides.card_id")
-      .as(QSLCard.withSides *)
-  }
-
   def getFromID(id: Long) = DB.withConnection { implicit c =>
     SQL("SELECT * FROM cards WHERE id={id}").on(
       'id -> id
