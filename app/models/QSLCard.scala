@@ -49,7 +49,7 @@ object QSLCard {
       .as(QSLCard.withSides *)
   }
 
-  def getFromID(id: Int) = DB.withConnection { implicit c =>
+  def getFromID(id: Long) = DB.withConnection { implicit c =>
     SQL("SELECT * FROM cards WHERE id={id}").on(
       'id -> id
     ).as(QSLCard.simple.single)

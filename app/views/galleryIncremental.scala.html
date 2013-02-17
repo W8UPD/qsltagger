@@ -1,7 +1,9 @@
 @(sides: List[QSLCardSide])(implicit request: RequestHeader)
 @sides.grouped(4).map { row =>
   @row.map { side =>
-    <img src="@side.thumbnailRoute" />
+    <a href="@routes.Application.showCard(side.cardID)">
+      <img src="@side.thumbnailRoute" alt="QSL Card @side.cardID" />
+    </a>
   }
   <br />
 }

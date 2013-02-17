@@ -37,7 +37,7 @@ object Application extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.search(request.user))
   }
 
-  def showCard(id: Int) = UserAwareAction { implicit request =>
+  def showCard(id: Long) = UserAwareAction { implicit request =>
     val card = QSLCard.getFromID(id)
     Ok(views.html.viewCard(request.user, card))
   }
