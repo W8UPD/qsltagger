@@ -8,8 +8,6 @@ import java.util.Date
 import org.joda.time.{DateTime, Period}
 import org.joda.time.format.{DateTimeFormat, PeriodFormat}
 
-import me.elrod.qsltagger.QSLTaggerUserService
-
 case class Comment(id: Long, cardID: Long, comment: String, date: Date)
 
 object Comment {

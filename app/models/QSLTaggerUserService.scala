@@ -1,4 +1,4 @@
-package me.elrod.qsltagger
+package models
 
 import securesocial.core.{AuthenticationMethod, Identity, UserId, UserServicePlugin, SocialUser}
 import securesocial.core.providers.Token
