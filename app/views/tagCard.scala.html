@@ -3,7 +3,7 @@
 
 @main("Tag a Random QSL Card", Some(user)) {
 <div class="clearfix padtop padbottom">
-  <div id="qslcard" class="center">
+  <div id="qslcard" class="center taggable">
     @card.sides.reverse.map { side =>
       <img src="@side.route" class="card" />
     }
