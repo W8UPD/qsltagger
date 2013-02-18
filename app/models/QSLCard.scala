@@ -15,8 +15,10 @@ case class QSLCardSide(id: Long, cardID: Long, filename: String) {
     ).as(QSLCard.simple.single)
   }
 
-  def route = controllers.routes.Assets.at("qslcards/" + filename + ".JPG")
-  def thumbnailRoute = controllers.routes.Assets.at("qslcards_thumbs/" + filename + ".JPG")
+  // The direct call to .get is intentional - I'm fine with fataling if these
+  // are ever undefined, and this is intentional behavior.
+  def route = current.configuration.getString("qsltagger.url.cards").get + filename + ".JPG"
+  def thumbnailRoute = current.configuration.getString("qsltagger.url.thumbs").get + filename + ".JPG"
 
 }
 

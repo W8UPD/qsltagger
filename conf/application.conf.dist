@@ -52,3 +52,6 @@ securesocial {
   onLogoutGoTo=/login
   ssl=false   
 }
+
+qsltagger.url.cards="http://static.w8upd.org/qslcards/"
+qsltagger.url.thumbs="http://static.w8upd.org/qslcards_thumbs/"
