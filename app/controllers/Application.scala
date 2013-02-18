@@ -46,6 +46,10 @@ object Application extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.gallery(request.user))
   }
 
+  def getHelp = UserAwareAction { implicit request =>
+    Ok(views.html.getHelp(request.user))
+  }
+
   def galleryIncremental(start: Int = 0) = Action { implicit request =>
     val sides = QSLCardSide.allSides.grouped(40).toList
     if (start > sides.length - 1) {

@@ -1,0 +1,60 @@
+@(user: Option[securesocial.core.Identity])(implicit request: RequestHeader)
+@import securesocial.core.IdentityProvider
+
+@main("Getting Help", user) {
+<h2>Helping Us Help You.</h2>
+<p>
+  QSLTagger is an
+  <a href="https://github.com/w8upd/qsltagger">open source</a> project lead
+  by Ricky Elrod (N8SQL), released under the Apache License version 2.
+</p>
+
+<p>
+  When things break, it can be frustrating, and we realize this. But in
+  order to help us help you as best we can, we need some help from you.
+</P>
+
+<p>
+  When reporting an error, <b>please</b> include the following information.
+</p>
+
+<ul>
+  <li>The full URL that you experienced the bug on.</li>
+  <li>
+    If relevant, the ID of the card you were tagging or viewing. This can be
+    found in the <b>title</b> of the page.
+  </li>
+  <li>
+    Your browser, version, and operating system. Alternatively, the one-line
+    result of going to <a href="http://da.gd/ua">this page</a>.
+  </li>
+  <li>Any other relevant information that you think would help.</li>
+</ul>
+
+<p>
+  <b>Please</b> do this. It will make our lives easier, and help us make
+  your life easier.
+</p>
+
+<small>
+  This page might have been inspired by this
+  <a href="http://www.phabricator.com/docs/phabricator/article/Please_Please_Please.html">
+    relevant Phabricator article
+  </a>.
+</small>
+
+<h2>Once you've gotten that information...</h2>
+
+<p>
+  ...if you have a GitHub account, feel free to
+  <a href="https://github.com/W8UPD/qsltagger">open an issue</a> on the
+  QSLTagger project.
+</p>
+
+<p>
+  Otherwise, you can email me directly at
+  <a href="mailto:ricky.qsltagger@@elrod.me">ricky.qsltagger@@elrod.me</a> and
+  I'll respond as soon as I can.
+</p>
+
+}
