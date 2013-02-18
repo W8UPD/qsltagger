@@ -5,34 +5,10 @@ import securesocial.core.providers.Token
 
 import anorm._
 import play.api.db._
-import anorm.SqlParser._
 import play.api.Play.current
 import play.api.Application
 
 import java.sql.Timestamp
-
-object QSLTaggerUserService {
-  val simple = {
-    get[String]("user_id") ~
-    get[String]("provider") ~
-    get[String]("first_name") ~
-    get[String]("last_name") ~
-    get[String]("full_name") ~
-    get[Option[String]]("email") ~
-    get[Option[String]]("profile_pic") ~
-    get[String]("auth_method") map {
-      case userID ~ provider ~ firstName ~ lastName ~ fullName ~ email ~ profilePic ~ authMethod =>
-        SocialUser(
-          UserId(userID, provider),
-          firstName,
-          lastName,
-          fullName,
-          email,
-          profilePic,
-          AuthenticationMethod(authMethod))
-    }
-  }
-}
 
 class QSLTaggerUserService(application: Application) extends UserServicePlugin(application) {
   /** Finds a SocialUser that maches the specified id
