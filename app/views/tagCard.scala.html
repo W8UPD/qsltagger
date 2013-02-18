@@ -2,6 +2,7 @@
 @import securesocial.core.IdentityProvider
 
 @main("Tagging QSL Card #" + card.id, Some(user)) {
+<script src="@routes.Assets.at("javascripts/tagCard.min.js")"></script>
 <div class="clearfix padtop padbottom">
   <div id="qslcard" class="center taggable">
     @card.sides.reverse.map { side =>
