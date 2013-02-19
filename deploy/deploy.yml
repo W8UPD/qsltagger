@@ -1,0 +1,21 @@
+---
+- hosts: w8upd.org
+  user: n8sql # TODO: Move to separate user.
+  tasks:
+    - name: Back up MySQL database.
+      shell: mysqldump -uroot qsltagger > /home/n8sql/dbbackups/qsltagger-`date +%s`
+
+    - name: Pull latest code from GitHub.
+      git: repo=git://github.com/W8UPD/qsltagger.git version=master dest=/home/n8sql/qsltagger # TODO: Move this too.
+
+    - name: Clean, Compile, and Stage new code.
+      command: chdir=/home/n8sql/qsltagger sbt clean compile stage # TODO: And this.
+
+    - name: Kill existing instance.
+      command: sudo stop qsltagger
+
+    - name: Copy new upstart file
+      template: src=upstart-qsltagger.conf dest=/etc/init/qsltagger.conf
+
+    - name: Start new instance.
+      command: sudo start qsltagger
